@@ -1,0 +1,25 @@
+2017-01-03 19:27:34  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11bf785: startup date [Tue Jan 03 19:27:34 CST 2017]; root of context hierarchy
+2017-01-03 19:27:34  [ main:84 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-01-03 19:27:34  [ main:571 ] - [ INFO ]  Loading properties file from class path resource [db.properties]
+2017-01-03 19:29:07  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11d75b9: startup date [Tue Jan 03 19:29:07 CST 2017]; root of context hierarchy
+2017-01-03 19:29:07  [ main:59 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-01-03 19:29:08  [ main:448 ] - [ INFO ]  Loading properties file from class path resource [db.properties]
+2017-01-03 19:29:09  [ main:2078 ] - [ DEBUG ]  ==>  Preparing: select * from person 
+2017-01-03 19:29:09  [ main:2134 ] - [ DEBUG ]  ==> Parameters: 
+2017-01-03 19:29:09  [ main:2185 ] - [ DEBUG ]  <==      Total: 2
+2017-01-03 19:32:59  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11bf785: startup date [Tue Jan 03 19:32:59 CST 2017]; root of context hierarchy
+2017-01-03 19:32:59  [ main:63 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-01-03 19:32:59  [ main:459 ] - [ INFO ]  Loading properties file from class path resource [db.properties]
+2017-01-03 19:34:11  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@11bf785: startup date [Tue Jan 03 19:34:11 CST 2017]; root of context hierarchy
+2017-01-03 19:34:11  [ main:60 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-01-03 19:34:11  [ main:449 ] - [ INFO ]  Loading properties file from class path resource [db.properties]
+2017-01-03 19:34:12  [ main:1233 ] - [ DEBUG ]  ==>  Preparing: select * from person 
+2017-01-03 19:34:12  [ main:1266 ] - [ DEBUG ]  ==> Parameters: 
+2017-01-03 19:34:12  [ main:1291 ] - [ DEBUG ]  <==      Total: 2
+2017-01-03 20:58:15  [ main:0 ] - [ INFO ]  Refreshing org.springframework.context.support.ClassPathXmlApplicationContext@19c86c5: startup date [Tue Jan 03 20:58:15 CST 2017]; root of context hierarchy
+2017-01-03 20:58:15  [ main:56 ] - [ INFO ]  Loading XML bean definitions from class path resource [beans.xml]
+2017-01-03 20:58:15  [ main:465 ] - [ INFO ]  Loading properties file from class path resource [db.properties]
+2017-01-03 20:58:16  [ main:1251 ] - [ DEBUG ]  ==>  Preparing: select * from person limit ?,? 
+2017-01-03 20:58:16  [ main:1288 ] - [ DEBUG ]  ==> Parameters: 5(Integer), null
+2017-01-03 20:58:16  [ main:1371 ] - [ INFO ]  Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2017-01-03 20:58:16  [ main:1430 ] - [ INFO ]  SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]

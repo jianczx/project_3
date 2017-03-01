@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+<!-- 
+	spring混合方案：
+	1.自己写的类用注解
+	2.第三方框架 使用xml配置
+	3.AOP切面  也可以采用两种方案:
+		a: 事务处理-》xml配置
+		b:其他的切面增强-》注解
+
+ -->
+<!-- 数据库链接文件   -->
+<context:property-placeholder location="db.properties"/>
+
+<context:component-scan base-package="com.yc.aspect,com.yc.biz,com.yc.dao,com.yc.impl"/>
+
+<aop:aspectj-autoproxy/>
+
+<!-- spring 真核  mybatis/hibernate/jdbc 得配置思路：
+	1.配置数据源（-》数据连接池） -》2.使用了dao框架  都要求配置连接回话工厂  -》
+ -->
+
+<!-- 使用  dbcp配置数据库连接池 jdbc, dbcp ,c3p0 -->
+<bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+    <property name="driverClassName" value="${jdbc.driver}"/>
+    <property name="url" value="${jdbc.url}"/>
+    <property name="username" value="${jdbc.username}"/>
+    <property name="password" value="${jdbc.password}"/>
+</bean>
+
+<!-- 取得sqlsessionFactory -->
+<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+	<property name="dataSource" ref="dataSource" />
+	<!-- 读取mybatis的配置文件 -->
+	<!-- <property name="configLocation" value="mybatis-config.xml" /> -->
+	
+	<!-- 主要用于配置  mybatis中的configuration中的settings配置 -->
+	<property name="configurationProperties">
+		<props>
+			<prop key="logImpl" >LOG4J</prop>
+		</props>
+	</property>
+	
+	<property name="typeAliasesPackage" value="com.yc.bean">
+		
+	</property>
+	
+	<!-- 读取mapper的配置文件信息 有多个时 -->
+ <!-- 	<property name="mapperLocations">
+		<list>
+			<value>com/yc/mapper/PersonMapper.xml</value>
+		</list>
+	</property>  -->
+	<property name="mapperLocations" value="classpath*:com/yc/mapper/*.xml">
+		
+	</property> 
+</bean>
+
+
+</beans>

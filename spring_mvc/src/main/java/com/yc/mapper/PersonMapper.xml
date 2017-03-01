@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.yc.mapper.PersonMapper">
+
+	<select id="findAll" resultType="Person">
+		select * from person
+	</select>
+	
+	<select id="findcondition" resultType="Person" parameterMap="p">
+		select * from person where pname={#pname}
+	</select>
+	
+	<parameterMap type="java.util.Map" id="p">
+		<parameter property="pname" javaType="java.lang.String" />
+	</parameterMap>
+	
+	
+	<select id="findCount" resultType="java.lang.Double" >
+		select count(*) from person
+	</select>
+	
+	<select id="findbypage" parameterMap="page">
+		select * from person limit #{start},#{end}
+	</select>
+	
+	<parameterMap type="java.util.Map" id="page">
+		<parameter property="start" javaType="java.lang.Integer"></parameter>
+		<parameter property="end" javaType="java.lang.Integer"></parameter>
+	</parameterMap>
+	
+</mapper>
